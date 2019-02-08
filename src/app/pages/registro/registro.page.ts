@@ -20,7 +20,7 @@ public password: string;
   onSubmitAddUser () {
     this.authService.registerUser(this.email, this.password)
     .then((res) => {
-     this.router.navigate(['/perfil']);
+     this.router.navigate(['/login']);
     }).catch ((err) => {
       console.log(err);
     });

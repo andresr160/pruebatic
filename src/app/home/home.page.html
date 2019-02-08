@@ -8,7 +8,8 @@
 
 <ion-content padding>
     <div class="d-flex justify-content-around">
-        <ion-button [routerLink]="['/login']" shape="round" fill="outline" expand="block" color="dark">Login</ion-button>
-        <ion-button [routerLink]="['/registro']" shape="round" fill="outline" expand="block" color="dark">Registrarse</ion-button>
+        <ion-button *ngIf="!isLogin" [routerLink]="['/login']" shape="round" fill="outline" expand="block" color="dark">Login</ion-button>
+        <ion-button *ngIf="!isLogin" [routerLink]="['/registro']" shape="round" fill="outline" expand="block" color="dark">Registrarse</ion-button>
+        <button *ngIf="isLogin" (click)="onClickLogout()" type="submit" class="btn btn-primary btn-block">Log Out</button>
     </div>
 </ion-content>

@@ -8,7 +8,7 @@
         <ion-tab-button [routerLink]="['/home']" tab="home">
             <ion-icon name="home"></ion-icon>
         </ion-tab-button>
-        <ion-tab-button [routerLinkActive]="['/perfil']" tab="perfil">
+        <ion-tab-button *ngIf="isLogin" [routerLinkActive]="['/perfil']" tab="perfil">
             <ion-icon name="person"></ion-icon>
         </ion-tab-button>
         <ion-tab-button [routerLinkActive]="['/discos']" tab="discos">
