@@ -5,14 +5,14 @@
 <ion-tabs>
     <!-- Tab bar -->
     <ion-tab-bar slot="bottom">
-        <ion-tab-button tab="account">
+        <ion-tab-button [routerLinkActive]="['/home']" tab="home">
+            <ion-icon name="home"></ion-icon>
+        </ion-tab-button>
+        <ion-tab-button [routerLinkActive]="['/perfil']" tab="perfil">
             <ion-icon name="person"></ion-icon>
         </ion-tab-button>
-        <ion-tab-button tab="contact">
-            <ion-icon name="call"></ion-icon>
-        </ion-tab-button>
-        <ion-tab-button tab="settings">
-            <ion-icon name="settings"></ion-icon>
+        <ion-tab-button [routerLinkActive]="['/discos']" tab="discos">
+            <ion-icon name="disc"></ion-icon>
         </ion-tab-button>
     </ion-tab-bar>
 </ion-tabs>
