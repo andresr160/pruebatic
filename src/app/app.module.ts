@@ -19,16 +19,25 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
+// import de flash messages
+
+// import { FlashMessagesModule } from 'angular2-flash-messages';
+// import { FlashMessagesService } from 'angular2-flash-messages';
+
+
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule, AngularFireAuthModule, FormsModule],
+    AngularFirestoreModule, AngularFireAuthModule, FormsModule
+   // FlashMessagesModule
+  ],
   providers: [
     StatusBar,
     SplashScreen,
+    // FlashMessagesService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

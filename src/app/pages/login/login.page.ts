@@ -19,9 +19,10 @@ export class LoginPage implements OnInit {
   onSubmitLogin () {
     this.authService.loginEmail(this.email, this.password)
     .then((res) => {
+      alert('Bienvenido.');
      this.router.navigate(['/perfil']);
     }).catch ((err) => {
-      console.log(err);
+      alert('los datos o la contrasena son incorrectos.');
     });
   }
 

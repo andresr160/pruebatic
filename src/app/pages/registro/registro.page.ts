@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/service/auth.service';
 import { Router } from '@angular/router';
 
 
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.page.html',
@@ -20,9 +21,10 @@ public password: string;
   onSubmitAddUser () {
     this.authService.registerUser(this.email, this.password)
     .then((res) => {
-     this.router.navigate(['/login']);
+      alert('Se creo el usuario');
+      this.router.navigate(['/login']);
     }).catch ((err) => {
-      console.log(err);
+      alert(err.message);
     });
   }
 
