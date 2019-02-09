@@ -3,6 +3,6 @@ export interface Disco {
     autor: string;
     genero: string;
     album: string;
-    fecha: string;
+    fechalanzamiento: string;
     key$?: string;
 }

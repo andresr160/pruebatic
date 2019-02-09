@@ -2,10 +2,10 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-discos',
-  templateUrl: './discos.component.html',
-  styleUrls: ['./discos.component.scss']
+  templateUrl: './discos.page.html',
+  styleUrls: ['./discos.page.scss'],
 })
-export class DiscosComponent implements OnInit {
+export class DiscosPage implements OnInit {
 
   constructor() { }
 

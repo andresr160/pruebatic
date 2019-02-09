@@ -10,11 +10,9 @@ import { AuthService } from './service/auth.service';
   templateUrl: 'app.component.html'
 })
 export class AppComponent {
-
   public isLogin: boolean;
   public nombreUsuario: string;
   public emailUsuario: string;
-
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,

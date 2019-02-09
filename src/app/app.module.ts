@@ -17,28 +17,23 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
-
-// import componentes
 import { DiscosComponent } from './components/discos/discos.component';
-import { DiscoComponent } from './components/disco/disco.component';
+import { DiscoComponent } from './components/discos/disco.component';
+import { DiscosService } from './service/discos.service';
 
-// import http modulo
-import { HttpModule } from '@angular/http';
-
-// import servicio disco
-import { DiscoService } from './services/disco.service';
 
 @NgModule({
   declarations: [AppComponent, DiscosComponent, DiscoComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule, AngularFireAuthModule, FormsModule, HttpModule
+    AngularFirestoreModule, AngularFireAuthModule, FormsModule
+   // FlashMessagesModule
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    DiscoService,
+    DiscosService,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

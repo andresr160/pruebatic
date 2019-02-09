@@ -4,24 +4,18 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content>
-    <div class="container">
-        <button text-center [routerLink]="['/disco','nuevo']" class="btn btn-btn-primary" type="button">
-      Agregar Disco
-    </button>
-    </div>
+<ion-content padding>
+
+    <button [routerLink]="['/disco','nuevo']" type="button" class="btn btn-primary btn-block">Nuevo Disco</button>
 
     <ion-card>
         <ion-card-header>
-            <ion-card-subtitle>Autor</ion-card-subtitle>
-            <ion-card-title>Nombre</ion-card-title>
+            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+            <ion-card-title>Card Title</ion-card-title>
         </ion-card-header>
 
         <ion-card-content>
-            <ion-item>Genero</ion-item>
-            <ion-item>Album</ion-item>
-            <ion-item>Fecha de lanzamiento</ion-item>
+            Keep close to Nature's heart... and break clear away, once in awhile, and climb a mountain or spend a week in the woods. Wash your spirit clean.
         </ion-card-content>
     </ion-card>
-
 </ion-content>

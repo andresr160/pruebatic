@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DiscosComponent } from './components/discos/discos.component';
-import { DiscoComponent } from './components/disco/disco.component';
-
+import { DiscoComponent } from './components/discos/disco.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -10,8 +9,10 @@ const routes: Routes = [
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'registro', loadChildren: './pages/registro/registro.module#RegistroPageModule' },
   { path: 'perfil', loadChildren: './pages/perfil/perfil.module#PerfilPageModule' },
-  { path: 'discos', component: DiscosComponent },
-  { path: 'disco/:id', component: DiscoComponent },
+  { path: 'discos', component: DiscosComponent},
+  { path: 'disco/:id', component: DiscoComponent},
+  { path: '**', pathMatch: 'full', redirectTo: 'home'}
+
 ];
 
 @NgModule({
