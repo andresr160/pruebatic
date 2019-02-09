@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Discos</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="container">
+        <button text-center [routerLink]="['/disco','nuevo']" class="btn btn-btn-primary" type="button">
+      Agregar Disco
+    </button>
+    </div>
+
+    <ion-card>
+        <ion-card-header>
+            <ion-card-subtitle>Autor</ion-card-subtitle>
+            <ion-card-title>Nombre</ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+            <ion-item>Genero</ion-item>
+            <ion-item>Album</ion-item>
+            <ion-item>Fecha de lanzamiento</ion-item>
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>
