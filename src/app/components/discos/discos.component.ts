@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DiscosService } from '../../service/discos.service';
 
 @Component({
   selector: 'app-discos',
@@ -7,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiscosComponent implements OnInit {
 
-  constructor() { }
+  discos: any;
+
+  constructor(private discosService: DiscosService) {
+
+    this.discosService.getDiscos()
+    .subscribe (data => {
+      console.log(data);
+
+      this.discos = data;
+
+    });
+   }
 
   ngOnInit() {
   }

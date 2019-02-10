@@ -23,13 +23,14 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { DiscosComponent } from './components/discos/discos.component';
 import { DiscoComponent } from './components/discos/disco.component';
 import { DiscosService } from './service/discos.service';
+import { KeysPipe } from './pipes/keys.pipe';
 
 // import servicios
 
 
 
 @NgModule({
-  declarations: [AppComponent, DiscosComponent, DiscoComponent],
+  declarations: [AppComponent, DiscosComponent, DiscoComponent, KeysPipe],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),

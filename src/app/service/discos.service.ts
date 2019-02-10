@@ -44,4 +44,9 @@ export class DiscosService {
     const url = `${this.discoURL}/${key$}.json`;
     return this.http.get( url ).pipe(map(res => res.json()));
   }
+
+  getDiscos() {
+
+    return this.http.get( this.discosURL ).pipe(map(res => res.json()));
+  }
 }
