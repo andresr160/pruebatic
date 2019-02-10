@@ -7,6 +7,7 @@
 <ion-content padding>
     <div class="d-flex justify-content-around">
         <button [routerLink]="['/discos']" type="button" class="btn">Atras</button>
+        <button (click)="agregarNuevo(forma)" type="button" class="btn btn-outline-success">Nuevo</button>
     </div>
     <form (submit)="guardar()" #forma='ngForm'>
         <div class="form-group">

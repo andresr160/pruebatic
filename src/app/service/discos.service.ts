@@ -39,4 +39,9 @@ export class DiscosService {
       return res.json();
     }));
   }
+
+  getDisco(key$: string) {
+    const url = `${this.discoURL}/${key$}.json`;
+    return this.http.get( url ).pipe(map(res => res.json()));
+  }
 }

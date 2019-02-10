@@ -3,6 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Disco } from '../../interface/disco';
 import { DiscosService } from '../../service/discos.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import { format } from 'path';
 
 
 
@@ -29,7 +30,13 @@ export class DiscoComponent implements OnInit {
               private router: Router,
               private actiRoute: ActivatedRoute) {
 
-                this.actiRoute.params.subscribe(parametros => {this.id = parametros ['id'];
+                this.actiRoute.params.subscribe(parametros => {
+
+                  this.id = parametros ['id'];
+                  if ( this.id !== 'nuevo') {
+                    this.discosService.getDisco (this.id)
+                    .subscribe( disco => this.disco = disco );
+                  }
 
                 });
                }
@@ -53,6 +60,12 @@ export class DiscoComponent implements OnInit {
     }
 
 
+  }
+
+  agregarNuevo (form: NgForm) {
+    this.router.navigate(['/disco', 'nuevo']);
+
+    form.reset ();
   }
 
 }
