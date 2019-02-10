@@ -1,37 +1,39 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>Disco nuevo</ion-title>
+        <ion-title>Disco Nuevo</ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+    <div class="d-flex justify-content-around">
+        <button [routerLink]="['/discos']" type="button" class="btn">Atras</button>
+    </div>
+    <form (submit)="guardar()" #forma='ngForm'>
+        <div class="form-group">
+            <label for="">Nombre</label>
+            <input type="text" name="nombre" id="nombre" class="form-control" placeholder="" aria-describedby="helpId">
 
-    <button [routerLink]="['/discos']" type="button" class="btn btn-primary">Regresar</button>
+        </div>
+        <div class="form-group">
+            <label for="">Autor</label>
+            <input type="text" name="autor" id="autor" class="form-control" placeholder="" aria-describedby="helpId">
 
+        </div>
+        <div class="form-group">
+            <label for="">Genero</label>
+            <input type="text" name="genero" id="genero" class="form-control" placeholder="" aria-describedby="helpId">
 
-    <form action="" (submit)='guardar()' #form='ngForm'>
-        <div class="form-group">
-            <label>Nombre</label>
-            <input [(ngModel)]="disco.nombre" type="text" name="nombre" id="nombredisco" class="form-control" placeholder="" aria-describedby="helpId" required>
         </div>
         <div class="form-group">
-            <label>Autor</label>
-            <input [(ngModel)]="disco.autor" type="text" name="autor" id="autor" class="form-control" placeholder="" aria-describedby="helpId">
+            <label for="">Album</label>
+            <input type="text" name="album" id="album" class="form-control" placeholder="" aria-describedby="helpId">
+
         </div>
         <div class="form-group">
-            <label>Genero</label>
-            <input [(ngModel)]="disco.genero" type="text" name="genero" id="genero" class="form-control" placeholder="" aria-describedby="helpId">
+            <label for="">Fecha de lanzamiento</label>
+            <input type="text" name="fechalanzamiento" id="fechalanzamiento" class="form-control" placeholder="" aria-describedby="helpId">
+
         </div>
-        <div class="form-group">
-            <label>Album</label>
-            <input [(ngModel)]="disco.album" type="text" name="album" id="album" class="form-control" placeholder="" aria-describedby="helpId">
-        </div>
-        <div class="form-group">
-            <label>Fecha de lanzamiento</label>
-            <input [(ngModel)]="disco.fechalanzamiento" type="number" name="fechalanzamiento" id="fechalanzamiento" class="form-control" placeholder="" aria-describedby="helpId">
-        </div>
-        <button [disabled]="!form.valid" type="submit" class="btn btn-primary btn-block">Guardar cambios</button>
+        <button type="submit" class="btn btn-block">Guardar</button>
     </form>
-
-
 </ion-content>

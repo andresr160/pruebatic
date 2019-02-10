@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { Disco } from '../../interfaces/disco.interface';
+import { Disco } from '../../interface/disco';
+
 
 @Component({
   selector: 'app-disco',
@@ -14,9 +15,9 @@ export class DiscoComponent implements OnInit {
     autor: '',
     genero: '',
     album: '',
-    fechalanzamiento: '',
-    key$: ''
+    fechalanzamiento: ''
   };
+
 
   constructor() { }
 

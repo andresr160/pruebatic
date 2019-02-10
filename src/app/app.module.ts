@@ -8,6 +8,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { HttpModule } from '@angular/http';
 
 // import de formulario
 import { FormsModule } from '@angular/forms';
@@ -17,9 +18,14 @@ import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { AngularFireAuthModule } from 'angularfire2/auth';
+
+// import de componentes
 import { DiscosComponent } from './components/discos/discos.component';
 import { DiscoComponent } from './components/discos/disco.component';
 import { DiscosService } from './service/discos.service';
+
+// import servicios
+
 
 
 @NgModule({
@@ -27,8 +33,7 @@ import { DiscosService } from './service/discos.service';
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule, AngularFireAuthModule, FormsModule
-   // FlashMessagesModule
+    AngularFirestoreModule, AngularFireAuthModule, FormsModule, HttpModule
   ],
   providers: [
     StatusBar,

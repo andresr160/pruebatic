@@ -9,10 +9,9 @@ const routes: Routes = [
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   { path: 'registro', loadChildren: './pages/registro/registro.module#RegistroPageModule' },
   { path: 'perfil', loadChildren: './pages/perfil/perfil.module#PerfilPageModule' },
-  { path: 'discos', component: DiscosComponent},
-  { path: 'disco/:id', component: DiscoComponent},
-  { path: '**', pathMatch: 'full', redirectTo: 'home'}
-
+  { path: 'discos', component: DiscosComponent },
+  { path: 'disco/:id', component: DiscoComponent },
+  { path: '**', pathMatch: 'full', redirectTo: 'home'},
 ];
 
 @NgModule({

@@ -4,5 +4,5 @@ export interface Disco {
     genero: string;
     album: string;
     fechalanzamiento: string;
-    key$?: string;
+
 }

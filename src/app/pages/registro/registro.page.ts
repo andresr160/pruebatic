@@ -22,7 +22,7 @@ public password: string;
     this.authService.registerUser(this.email, this.password)
     .then((res) => {
       alert('Se creo el usuario');
-      this.router.navigate(['/login']);
+      this.router.navigate(['/perfil']);
     }).catch ((err) => {
       alert(err.message);
     });
