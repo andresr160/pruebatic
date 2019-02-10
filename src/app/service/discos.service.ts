@@ -10,6 +10,7 @@ import { map } from 'rxjs/operators';
 export class DiscosService {
 
   discosURL = 'https://pruebatic-5f58a.firebaseio.com/discos.json';
+  discoURL = 'https://pruebatic-5f58a.firebaseio.com/discos/';
 
   constructor(private http: Http) { }
 
@@ -20,6 +21,20 @@ export class DiscosService {
     });
 
     return this.http.post( this.discosURL, body, {headers}).pipe(map(res=>{
+      console.log(res.json());
+      return res.json();
+    }));
+  }
+
+  actualizarDisco (disco: Disco, key$: string) {
+    const body = JSON.stringify( disco );
+    const headers = new Headers({
+      'Content-Type': 'application/json'
+    });
+
+    const url = `${this.discoURL}/${key$}.json`;
+
+    return this.http.put( url, body, {headers}).pipe(map(res => {
       console.log(res.json());
       return res.json();
     }));

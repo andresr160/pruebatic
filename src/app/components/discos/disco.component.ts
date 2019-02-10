@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Disco } from '../../interface/disco';
 import { DiscosService } from '../../service/discos.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 
@@ -21,16 +22,37 @@ export class DiscoComponent implements OnInit {
     fechalanzamiento: ''
   };
 
+  nuevo = false;
+  id: string;
 
-  constructor(private discosService: DiscosService) { }
+  constructor(private discosService: DiscosService,
+              private router: Router,
+              private actiRoute: ActivatedRoute) {
+
+                this.actiRoute.params.subscribe(parametros => {this.id = parametros ['id'];
+
+                });
+               }
 
   ngOnInit() {
   }
 
   guardar() {
     console.log(this.disco);
-    this.discosService.nuevoDisco(this.disco)
-    .subscribe(data => {});
+
+    if (this.id === 'nuevo') {
+      this.discosService.nuevoDisco(this.disco)
+    .subscribe(data => {
+      this.router.navigate(['/disco', data.name]);
+    }, error => console.error(error));
+    } else {
+      this.discosService.actualizarDisco(this.disco, this.id)
+    .subscribe(data => {
+      console.log (data);
+    }, error => console.error(error));
+    }
+
+
   }
 
 }
