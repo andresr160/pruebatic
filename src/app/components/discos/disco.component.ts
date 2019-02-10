@@ -3,7 +3,7 @@ import { NgForm } from '@angular/forms';
 import { Disco } from '../../interface/disco';
 import { DiscosService } from '../../service/discos.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { format } from 'path';
+
 
 
 
@@ -55,6 +55,7 @@ export class DiscoComponent implements OnInit {
     } else {
       this.discosService.actualizarDisco(this.disco, this.id)
     .subscribe(data => {
+      this.router.navigate(['/discos']);
       console.log (data);
     }, error => console.error(error));
     }

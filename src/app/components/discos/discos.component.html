@@ -6,8 +6,7 @@
 
 <ion-content padding>
 
-    <button [routerLink]="['/disco','nuevo']" type="button" class="btn">Nuevo</button>
-
+    <button *ngIf="isLogin" [routerLink]="['/disco','nuevo']" type="button" class="btn">Nuevo</button>
 
     <ion-card *ngFor="let k of discos | keys">
         <ion-card-header>
@@ -21,8 +20,8 @@
             <p>{{discos[k].fechalanzamiento}}</p>
         </ion-card-content>
         <ion-item>
-            <ion-button [routerLink]="['/disco', k]" fill="outline" color="success" slot="start">Editar</ion-button>
-            <ion-button (click)="eliminarDisco(k)" fill="outline" color="danger" slot="end">Eliminar</ion-button>
+            <ion-button *ngIf="isLogin" [routerLink]="['/disco', k]" fill="outline" color="success" slot="start">Editar</ion-button>
+            <ion-button *ngIf="isLogin" (click)="eliminarDisco(k)" fill="outline" color="danger" slot="end">Eliminar</ion-button>
         </ion-item>
     </ion-card>
 

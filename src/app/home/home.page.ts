@@ -8,8 +8,7 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class HomePage {
   public isLogin: boolean;
-  public nombreUsuario: string;
-  public emailUsuario: string;
+
   constructor (public authService: AuthService) {}
 
 
@@ -17,8 +16,6 @@ export class HomePage {
     this.authService.getAuth().subscribe( auth => {
       if (auth) {
         this.isLogin = true;
-        this.nombreUsuario = auth.displayName;
-        this.emailUsuario = auth.email;
       } else {
         this.isLogin = false;
       }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DiscosService } from '../../service/discos.service';
+import { AuthService } from 'src/app/service/auth.service';
+
 
 @Component({
   selector: 'app-discos',
@@ -7,12 +9,15 @@ import { DiscosService } from '../../service/discos.service';
   styleUrls: ['./discos.component.scss']
 })
 export class DiscosComponent implements OnInit {
+  public isLogin: boolean;
+
 
   discos: any [] = [];
   // tslint:disable-next-line:no-inferrable-types
   loading: boolean = true;
 
-  constructor(private discosService: DiscosService) {
+  constructor(private discosService: DiscosService,
+    public authService: AuthService) {
 
     this.discosService.getDiscos()
     .subscribe (data => {
@@ -25,7 +30,14 @@ export class DiscosComponent implements OnInit {
     });
    }
 
-  ngOnInit() {
+   ngOnInit() {
+    this.authService.getAuth().subscribe( auth => {
+      if (auth) {
+        this.isLogin = true;
+      } else {
+        this.isLogin = false;
+      }
+    });
   }
 
   eliminarDisco(key$: string) {

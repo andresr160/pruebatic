@@ -12,7 +12,7 @@
     <form (submit)="guardar()" #forma='ngForm'>
         <div class="form-group">
             <label for="">Nombre</label>
-            <input [(ngModel)]="disco.nombre" type="text" name="nombre" id="nombre" class="form-control" placeholder="" aria-describedby="helpId" required>
+            <input [(ngModel)]="disco.nombre" type="text" name="nombre" id="nombredisco" class="form-control" placeholder="" aria-describedby="helpId" required>
 
         </div>
         <div class="form-group">
@@ -32,7 +32,7 @@
         </div>
         <div class="form-group">
             <label for="">Fecha de lanzamiento</label>
-            <input [(ngModel)]="disco.fechalanzamiento" type="text" name="fechalanzamiento" id="fechalanzamiento" class="form-control" placeholder="" aria-describedby="helpId">
+            <input [(ngModel)]="disco.fechalanzamiento" type="date" name="fechalanzamiento" id="fechalanzamiento" class="form-control" placeholder="" aria-describedby="helpId">
 
         </div>
         <button [disabled]='!forma.valid' type="submit" class="btn btn-block">Guardar</button>

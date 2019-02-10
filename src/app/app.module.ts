@@ -9,6 +9,8 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+
 
 // import de formulario
 import { FormsModule } from '@angular/forms';
@@ -24,17 +26,19 @@ import { DiscosComponent } from './components/discos/discos.component';
 import { DiscoComponent } from './components/discos/disco.component';
 import { DiscosService } from './service/discos.service';
 import { KeysPipe } from './pipes/keys.pipe';
+import { InfiniteScrollComponent } from './components/infinite-scroll/infinite-scroll.component';
 
 // import servicios
 
 
 
 @NgModule({
-  declarations: [AppComponent, DiscosComponent, DiscoComponent, KeysPipe],
+  declarations: [AppComponent, DiscosComponent, DiscoComponent, KeysPipe, InfiniteScrollComponent],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule, AngularFireAuthModule, FormsModule, HttpModule
+    AngularFirestoreModule, AngularFireAuthModule, FormsModule, HttpModule,
+    HttpClientModule
   ],
   providers: [
     StatusBar,
