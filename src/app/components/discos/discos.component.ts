@@ -8,20 +8,36 @@ import { DiscosService } from '../../service/discos.service';
 })
 export class DiscosComponent implements OnInit {
 
-  discos: any;
+  discos: any [] = [];
+  // tslint:disable-next-line:no-inferrable-types
+  loading: boolean = true;
 
   constructor(private discosService: DiscosService) {
 
     this.discosService.getDiscos()
     .subscribe (data => {
-      console.log(data);
 
-      this.discos = data;
+      setTimeout (() => {
+        this.discos = data;
+        this.loading = false;
+      }, 1000);
 
     });
    }
 
   ngOnInit() {
+  }
+
+  eliminarDisco(key$: string) {
+      this.discosService.eliminarDisco(key$)
+      .subscribe (respuesta => {
+        if (respuesta) {
+          console.error(respuesta);
+        } else {
+          // todo bien
+          delete this.discos[key$];
+        }
+      });
   }
 
 }

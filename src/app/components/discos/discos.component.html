@@ -8,6 +8,7 @@
 
     <button [routerLink]="['/disco','nuevo']" type="button" class="btn">Nuevo</button>
 
+
     <ion-card *ngFor="let k of discos | keys">
         <ion-card-header>
             <ion-card-subtitle>{{discos[k].nombre}}</ion-card-subtitle>
@@ -19,6 +20,17 @@
             <p>{{discos[k].album}}</p>
             <p>{{discos[k].fechalanzamiento}}</p>
         </ion-card-content>
+        <ion-item>
+            <ion-button [routerLink]="['/disco', k]" fill="outline" color="success" slot="start">Editar</ion-button>
+            <ion-button (click)="eliminarDisco(k)" fill="outline" color="danger" slot="end">Eliminar</ion-button>
+        </ion-item>
     </ion-card>
+
+    <div *ngIf='(discos | keys).length === 0 && !loading' class="alert alert-info" role="alert">
+        <strong>No hay</strong> discos para mostrar
+    </div>
+    <div *ngIf='loading' class="alert alert-warning" role="alert">
+        <strong>Cargando</strong> discos para mostrar
+    </div>
 
 </ion-content>

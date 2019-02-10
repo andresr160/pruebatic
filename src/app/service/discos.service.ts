@@ -49,4 +49,11 @@ export class DiscosService {
 
     return this.http.get( this.discosURL ).pipe(map(res => res.json()));
   }
+
+  eliminarDisco(key$: string) {
+    const url = `${this.discoURL}/${key$}.json`;
+    return this.http.delete( url ).pipe(map(res => res.json()));
+
+  }
+
 }
