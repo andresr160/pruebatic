@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Disco } from '../../interface/disco';
+import { DiscosService } from '../../service/discos.service';
+
+
 
 
 @Component({
@@ -19,9 +22,15 @@ export class DiscoComponent implements OnInit {
   };
 
 
-  constructor() { }
+  constructor(private discosService: DiscosService) { }
 
   ngOnInit() {
+  }
+
+  guardar() {
+    console.log(this.disco);
+    this.discosService.nuevoDisco(this.disco)
+    .subscribe(data => {});
   }
 
 }
