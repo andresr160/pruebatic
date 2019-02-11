@@ -20,7 +20,7 @@ export class LoginPage implements OnInit {
     this.authService.loginEmail(this.email, this.password)
     .then((res) => {
       alert('Bienvenido.');
-     this.router.navigate(['/perfil']);
+     this.router.navigate(['/discos']);
     }).catch ((err) => {
       alert('los datos o la contrasena son incorrectos.');
     });

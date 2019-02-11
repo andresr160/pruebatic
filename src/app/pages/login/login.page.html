@@ -1,17 +1,17 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>Login</ion-title>
+        <ion-title>Inicia Sesión</ion-title>
     </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content color='dark' padding>
 
     <form action="" (submit)="onSubmitLogin()">
         <div class="form-group">
-            <label for="">Email</label>
+            <label for="">E-mail</label>
             <input type="email" class="form-control" [(ngModel)]="email" name="email" id="email" aria-describedby="emailHelpId"> </div>
         <div class="form-group">
-            <label for="">Password</label>
+            <label for="">Contraseña</label>
             <input type="password" class="form-control" [(ngModel)]="password" id="password" name="password">
         </div>
         <button type="submit" class="btn btn-primary btn-block">Ingresar</button>

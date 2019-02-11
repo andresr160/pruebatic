@@ -4,11 +4,11 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content color="dark" padding>
 
     <button *ngIf="isLogin" [routerLink]="['/disco','nuevo']" type="button" class="btn">Nuevo</button>
 
-    <ion-card *ngFor="let k of discos | keys">
+    <ion-card color="light" *ngFor="let k of discos | keys">
         <ion-card-header>
             <ion-card-subtitle>{{discos[k].nombre}}</ion-card-subtitle>
             <ion-card-title>{{discos[k].autor}}</ion-card-title>
@@ -19,7 +19,7 @@
             <p>{{discos[k].album}}</p>
             <p>{{discos[k].fechalanzamiento}}</p>
         </ion-card-content>
-        <ion-item>
+        <ion-item *ngIf='isLogin'>
             <ion-button *ngIf="isLogin" [routerLink]="['/disco', k]" fill="outline" color="success" slot="start">Editar</ion-button>
             <ion-button *ngIf="isLogin" (click)="eliminarDisco(k)" fill="outline" color="danger" slot="end">Eliminar</ion-button>
         </ion-item>

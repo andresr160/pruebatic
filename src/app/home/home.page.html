@@ -1,16 +1,20 @@
 <ion-header>
     <ion-toolbar>
         <ion-title>
-            Ionic Blank
+            Prueba Tic
         </ion-title>
     </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content color='dark'>
+
+    <img src="../../assets/img/fondo-discos.png" alt="fondo-discos">
+
     <div class="d-flex justify-content-around">
-        <ion-button *ngIf="!isLogin" [routerLink]="['/login']" shape="round" fill="outline" expand="block" color="dark">Login</ion-button>
-        <ion-button *ngIf="!isLogin" [routerLink]="['/registro']" shape="round" fill="outline" expand="block" color="dark">Registrarse</ion-button>
-        <button *ngIf="isLogin" (click)="onClickLogout()" type="submit" class="btn btn-primary btn-block">Log Out</button>
+        <ion-button class="botones" *ngIf="!isLogin" [routerLink]="['/login']" shape="round" fill="outline" expand="block" color="light">Inicia Sesión</ion-button>
+        <ion-button class="botones" *ngIf="!isLogin" [routerLink]="['/registro']" shape="round" fill="outline" expand="block" color="light">Registrarse</ion-button>
+        <ion-button (click)="onClickLogout()" class="botones" *ngIf="isLogin" shape="round" fill="outline" expand="block" color="light">Salir</ion-button>
+
     </div>
 
 </ion-content>

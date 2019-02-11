@@ -4,13 +4,13 @@
     </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content color='dark' padding>
     <form action="" (submit)='onSubmitAddUser()'>
         <div class="form-group">
-            <label for="">Email</label>
+            <label for="">E-mail</label>
             <input type="email" class="form-control" [(ngModel)]="email" name="email" id="email" aria-describedby="emailHelpId"> </div>
         <div class="form-group">
-            <label for="">Password</label>
+            <label for="">Contraseña</label>
             <input type="password" class="form-control" [(ngModel)]="password" id="password" name="password">
         </div>
         <div class="form-group">
@@ -18,7 +18,7 @@
             <input type="text" class="form-control" id="nombre" name="nombre">
         </div>
         <div class="form-group">
-            <label for="">Telefono</label>
+            <label for="">Teléfono</label>
             <input type="number" class="form-control" id="tel" name="tel">
         </div>
         <div class="form-group">
@@ -26,7 +26,7 @@
             <input type="date" class="form-control" id="date" name="date">
         </div>
         <div class="form-group">
-            <label for="">Cedula</label>
+            <label for="">Cédula</label>
             <input type="number" class="form-control" id="cedula" name="cedula">
         </div>
         <button type="submit" class="btn btn-primary btn-block">Registrarme</button>
